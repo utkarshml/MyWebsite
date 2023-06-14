@@ -343,33 +343,78 @@
   </div>
   </section>
   <!-- ------------------------Price-section-end------------- -->
- <!-- --------------------Portfolio-section----------------- -->
-<section id="portfolio" class="container mt-5" style="margin-top:6rem!important;">
-    <h1  class="text-center d-lg-flex d-black  style-heading text-lg-start price-heading my-5" >Portfolio <span class=" my-auto mx-3 d-none d-lg-block  mt-5 side-divider"></span></h1>
-  <div class="row g-lg-3 g-md-3" data-aos="zoom-in-right">
-    <div class=" postion-relative col-12 col-md-8 col-lg-8 " style="z-index: 99;">
-      <div class="hover-effect">
-      <img src="../img/igor-miske-Px3iBXV-4TU-unsplash.jpg" class="img-fluid gallery rounded" alt="...">
-     <h4 class="img-overlay">My Work</h4>
+
+  <!-- ------------------------Porfolio-section-------------------------------- -->
+ <section class="container mt-5">
+  <h1  class="text-center d-lg-flex d-black  style-heading text-lg-start price-heading my-5" >Portfolio <span class=" my-auto mx-3 d-none d-lg-block  mt-5 side-divider"></span></h1>
+ <div class="tabcontainer p-5">
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane   fade show active mt-5" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+      <div class="tabimages row d-flex justify-content-center mx-auto ">
+        <div class="cardparent">
+          <div class="imagecard box"></div>
+       <div class="content">
+        <div>
+          <h2>Image Title</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi accusamus molestias quidem iusto.
+          </p>
+        </div>
+      </div>
+      </div>
+      <div class="imagecard box">
+        <div class="content">
+         <div>
+           <h2>Image Title</h2>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi accusamus molestias quidem iusto.
+           </p>
+         </div>
+       </div>
+       </div>
+       <div class="imagecard box">
+        <div class="content">
+         <div>
+           <h2>Image Title</h2>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi accusamus molestias quidem iusto.
+           </p>
+         </div>
+       </div>
+       </div>
       </div>
     </div>
-    
-    <div class="postion-relative col-12 col-md-4 col-lg-4" data-aos="zoom-in-left">
-      <div class="hover-effect ">
-         <img src="../public/img/igor-miske-Px3iBXV-4TU-unsplash (1) (1).jpg class="img-fluid gallery rounded" alt="...">
-      <h4 class="img-overlay">My Work</h4></div>
+    <div class="tab-pane mx-auto fade mt-5" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+      <div class="tabimages d-flex flex-wrap justify-content-center container">
+        <img class="portfolioCard col-lg-3 col-12 col-md-3 img-fluid" src="./img/img1.jpg"></img>
+        <img class="portfolioCard col-lg-3 col-12 col-md-3 img-fluid" src="./img/img1.jpg"></img>
+        <img class="portfolioCard col-lg-3 col-12 col-md-3 img-fluid" src="./img/img1.jpg"></img>
 
-          
-         
-           <div class="hover-effect mt-lg-3 mt-md-3 " data-aos="zoom-in-left">
-         <img src="../img/igor-miske-Px3iBXV-4TU-unsplash (1).jpg" class="img-fluid gallery rounded" alt="...">
-           <h4 class="img-overlay">My Work</h4></div>
+     
+       </div>
+    </div>
+    <div class="tab-pane mx-auto fade mt-5 id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+      <div class="tabimages d-flex flex-wrap justify-content-center container">
+        <img class="portfolioCard col-lg-3 col-12 col-md-3 img-fluid" src="./img/img1.jpg"></img>
+        <img class="portfolioCard col-lg-3 col-12 col-md-3 img-fluid" src="./img/img1.jpg"></img>
+       
   
-      </div>
+
+     
+       </div>
     </div>
   </div>
-</section>
-  <!-- ----------------------------Portfolio-section-end-------------------- -->
+ </div>
+ </section>
+ <!-- -----------------------------Portfolio-section-end------------------------- -->
 
 <section id="contant" class="container">
   <h1  class="text-center style-heading my-5" >Contact</h1>
@@ -425,7 +470,7 @@
   page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
   teal, blue, blurple, magenta, pink!
   -->
-  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+ 
 </body>
    <script src="script.js"></script>
   <script src="anime.min.js"></script>
