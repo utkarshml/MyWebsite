@@ -1,5 +1,8 @@
 $(".plan-list li").prepend(`<i class="uil uil-check"></i>`)
 const tool = Array.from($(".bar-tool"));
+
+
+  
 $(".nav-link").click(function(){
   $(".nav-link").removeClass("active")
   $(this).addClass("active")
@@ -9,8 +12,20 @@ $(".nav-link").click(function(){
    bardata.push(parseInt( parseInt(e.innerText)))
   })
 
-  
-  console.log(bardata)
+   // Add event listener to tab buttons
+   $('.tab-button').on('click', function() {
+    const tab = $(this).data('tab');
+    
+    // Show selected tab content
+    $('.card-image').each(function() {
+      const tabData = $(this).data('tab');
+      if (tabData === tab || tab === 'all') {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
 $(window).scroll(function() {
   const element = $('.navbar');
   let position = window.pageYOffset;
