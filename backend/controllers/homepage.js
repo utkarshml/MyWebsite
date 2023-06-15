@@ -38,7 +38,8 @@ export const userAddDatabase = async (req , res ) =>{
   }
 }
 export const userFromDatabase = (req , res)=>{
-    req.on("data"  , ()=>{
-        console.log(req.body)
+    console.log(req.body)
+    res.json({
+        success:true
     })
 }
