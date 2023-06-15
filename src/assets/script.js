@@ -1,16 +1,7 @@
 $(".plan-list li").prepend(`<i class="uil uil-check"></i>`)
 const tool = Array.from($(".bar-tool"));
-const navitemarry = Array.from($(".nav-item"))
-// navitemarry.forEach(e=>{
-//   $(e).on("click", ()=>{
-//     $("#Navbar-model").removeClass("show")
-//     $("#Navbar-model").css("display" , "none")
-//   })
-// })
-$(".nav-item").on("click", function(){
-$("navbar-model").removeClass("show")
-})
-  
+
+
 $(".nav-link").click(function(){
   $(".nav-link").removeClass("active")
   $(this).addClass("active")

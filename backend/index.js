@@ -1,17 +1,21 @@
 import express from "express"
 import path from "path"
-import cookieparser from "cookie-parser"
+import cookieParser from "cookie-parser"
+import mongodb from "./database/database.js"
 import dotenv from "dotenv"
-import ejs from "ejs"
+import bodyParser from "body-parser"
 import HomeRoute from './routes/homepage.js'
-
+mongodb()
 export const app = express()
 dotenv.config({
     path: path.join(path.resolve() , "/backend/config.env")
 })
-app.set("view engine", "ejs")
+
 app.use(express.static(path.join(path.resolve() , "public")))
 app.use(express.static(path.join(path.resolve() , "/src/assets/")))
 app.use(HomeRoute)
-app.use(cookieparser())
-
+app.use(cookieParser())
+app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.json())
+app.use(express.json())
+app.set("view engine", "ejs")
