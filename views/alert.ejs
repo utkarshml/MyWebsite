@@ -1,0 +1,24 @@
+
+<style>
+    .alert{
+        display: none;
+        background-color: #e6a0a07c!important;
+        color: white!important;
+        border-radius: 2rem!important;
+        padding: 0.5rem 1rem!important;
+        margin-top: 1rem!important;
+        text-align: center;
+        width: 100%;
+        font-size: 0.8rem;
+        font-weight: 500;
+        i{
+          font-size: 1.2rem;
+          margin-right: 0.5rem;
+        }
+      }
+      .block{
+       display: block!important;
+      }
+</style>
+
+<div class="alert <%=locals.display %>"><%= locals.alert %></div>

@@ -1,9 +1,32 @@
+
+const navlinks = document.querySelectorAll(".nav-links");
+const burger = document.querySelector(".togglebtn");
+const nav = document.querySelector("nav");
+
+// toggle nav
+burger.addEventListener("click", (e) => {
+ nav.classList.toggle("navactive");
+  burger.classList.toggle("baractive");
+});
+navlinks[0].classList.add("active");
+function acitveLink() {
+  navlinks.forEach((item) => {
+    item.classList.remove("active");
+    this.classList.add("active");
+    nav.classList.remove("navactive");
+    burger.classList.remove("baractive");
+  });
+}
+navlinks.forEach((item) => {
+    item.addEventListener("click", acitveLink);
+    });
+
 $(".plan-list li").prepend(`<i class="uil uil-check"></i>`)
 const tool = Array.from($(".bar-tool"));
 
 
-$(".nav-link").click(function(){
-  $(".nav-link").removeClass("active")
+$(".nav-links").click(function(){
+  $(".nav-links").removeClass("active")
   $(this).addClass("active")
 })
   let bardata = []

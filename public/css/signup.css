@@ -4,41 +4,89 @@ body {
   background-color: #353543 !important;
   justify-content: center;
   position: relative;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
 }
 
-.container {
-  position: absolute;
-  top: 50%;
-  max-width: 600px !important;
+nav {
+  width: 100%;
+  padding: 1rem 2rem;
+}
+nav a {
+  text-decoration: none;
+  color: #6853D5;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+nav a i {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.user {
+  height: 400px;
+  background-color: #6853D5;
+  border-radius: 8px;
+  width: 300px;
+  position: relative;
+}
+.user i {
+  font-size: 10rem;
+  color: white;
+  top: 40%;
   left: 50%;
-  transform: translate(-50%, 40%);
-  background-color: hsla(250, 25%, 34%, 0.16) !important;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.form-container {
+  max-width: 800px !important;
+  background-color: hsla(250, 42%, 39%, 0.16) !important;
+  height: auto;
   margin: auto;
 }
-.container h1 {
+.form-container h1 {
   color: #6853D5;
+  margin-top: 1rem;
 }
-.container form label {
+.form-container form {
+  padding: 1rem;
+}
+.form-container form label {
   color: white !important;
 }
-.container form input, .container form textarea {
+.form-container form input, .form-container form textarea {
   background: hsla(250, 25%, 34%, 0.53) !important;
   border-bottom: 2px solid #6853D5 !important;
   border-top: none !important;
   border-left: none !important;
   border-right: none !important;
   color: #6853D5 !important;
+  padding-left: 1.5rem;
+  border-radius: 2rem;
 }
-.container form input:focus {
+.form-container form input:focus {
   outline: none !important;
   box-shadow: none !important;
   border-bottom: 2px solid #8a7ccf !important;
 }
-.container form button {
+.form-container form button {
   background-color: #6853D5;
   outline: unset;
   border: none;
+  border-radius: 2rem;
 }
-.container form button:hover {
+.form-container form button:hover {
+  background-color: #8a7ccf !important;
+}
+
+#login {
+  background-color: #6853D5;
+  color: white;
+  border: none;
+}
+#login:hover {
   background-color: #8a7ccf !important;
 }

@@ -18,76 +18,44 @@
 
   <link href="./style.css" rel="stylesheet" type="text/css" />
 </head>
-
-<body>
-  <!-- -------------Header-section----------- -->
+ 
   <!-- --------------Navbar------------------- -->
-  <nav class="navbar navbar-expand-lg navbar-light px-1 d-block w-100 position-fixed top-0">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Utkarsh<span class="text-dark fs-4">.</span></a>
-      <a class="toggle-btn d-lg-none" data-bs-toggle="modal" href="#Navbar-model" role="button"><i
-          class="uil uil-bars"></i></a>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link text-light active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#skill">Skill</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#portfolio">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#contant">Contact</a>
-          </li>
-
-        </ul>
-        <div class="d-flex align-items-center">
-          <a href="/login" class="login-btn mx-1">Login</a>
-          <a class="btn btn-sign mx-1" href="/signup">SignUp</a>
-        </div>
-      </div>
+ <!-- navigation bar  -->
+ <header class="navbar">
+  <div class="logo">
+    <a style="color: var(--primary-color);" href="#">Utkarsh<span>.</span></a>
+  </div>
+  <nav>
+    <ul>
+      <li><a class="nav-links active" href="#home">Home</a></li>
+      <li><a class="nav-links" href="#about">About</a></li>
+      <li><a class="nav-links" href="#skill">Skills</a></li>
+      <li><a class="nav-links" href="#portfolio">Portfolio</a></li>
+      <li><a class="nav-links" href="#contact">Contact</a></li>
+    </ul>
+    <% if(!locals.name) { %>
+    <div class="register">
+      <div class="login"><a href="/login">Login</a></div>
+      <div class="signup"><a href="/signup">SignUp</a></div>
     </div>
   </nav>
-  <!-- ----------------Navbar-Section-bar-end---------------- -->
-  <!-- -------------------Navbar-toggle-mobile-version--------------- -->
-  <div class="modal fade" id="Navbar-model" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content d-flex flex-column justify-content-center align-items-center p-3">
-        <button type="button" class=" btn-cross ms-auto" data-bs-dismiss="modal" aria-label="Close"><i
-            class="uil uil-multiply"></i></button>
-        <div class="modal-body">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li class="nav-item text-center">
-              <a class="nav-link text-light active" aria-current="page" href="#home">Home</a>
-            </li>
-            <li class="nav-item text-center">
-              <a id="#aboutLink" class="nav-link text-light"  data-bs-dismiss="modal" data-bs-target="#about" href="#about">About</a>
-            </li>
-            <li class="nav-item text-center">
-              <a class="nav-link text-light" href="#skill "  >Skill</a>
-            </li>
-            <li class="nav-item text-center">
-              <a class="nav-link text-light" href="#portfolio"  >Portfolio</a>
-            </li>
-            <li class="nav-item text-center">
-              <a class="nav-link text-light" href="#contant">Contact</a>
-            </li>
 
-          </ul>
-        </div>
-        <div class="d-flex align-items-center">
-          <a href="/login" class="login-btn mx-1">Login</a>
-          <a class="btn btn-sign mx-1" href="/signup">SignUp</a>
-        </div>
-      </div>
+  <% } else { %>
+    <div class="register">
+      <div class="login"><a href="/login"><%= locals.name %></a></div>
+      <form method="post" action="/logout">
+      <div class="signup"><button >logout</button></div></form>
     </div>
+  </nav>
+    <% } %>
+
+  <div class="togglebtn">
+    <div class="bar bar-1"></div>
+    <div class="bar bar-2"></div>
+    <div class="bar bar-3"></div>
   </div>
+</header>
+<!-- header ends here -->
   <!-- -------------------Navbar-toggle-mobile-version-end--------------- -->
 
 
@@ -408,7 +376,7 @@
   </section>
   <!-- -----------------------------Portfolio-section-end------------------------- -->
 
-  <section id="contant" class="container">
+  <section id="contact" class="container">
     <h1 class="text-center style-heading my-5">Contact</h1>
     <div class="row ">
       <div class="col-lg-7 col-12 about-card p-5 rounded" data-aos="zoom-in">
@@ -432,33 +400,7 @@
 
   </section>
   <!-- -----------------------------End-contant---------------------- -->
-  <footer class="mt-5">
-
-    <div class="row container pt-5 m-auto">
-      <div
-        class="col-12 col-lg-6 col-md-6 d-flex flex-column justifu-content-center align-items-center container m-auto">
-        <div style="font-size: 3rem; font-weight: 600; color: var(--background-color);">Utkarsh</div>
-        <div class="contianer my-3">
-          <i style="font-size:2rem; color:var(--background-color); margin:0.5rem 0.5rem" class="uil uil-github"></i>
-          <i style="font-size:2rem; color:var(--background-color); margin:0.5rem 0.5rem" class="uil uil-linkedin"></i>
-          <i style="font-size:2rem; color:var(--background-color); margin:0.5rem 0.5rem"
-            class="uil uil-code-branch"></i>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-6 d-flex p-5 flex-column align-items-center">
-
-        <a href="#">home</a>
-        <a href="#">About</a>
-        <a href="#">Skill</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Contact</a>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <div class=" copyright mx-auto d-flex justify-content-center">
-      Copyright <i class="uil mx-1 fs-3 uil-registered"></i> 2023
-    </div>
-  </footer>
+ <%- include("./footer") -%>
   <!--
   This script places a badge on your repl's full-browser view back to your repl's cover
   page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,

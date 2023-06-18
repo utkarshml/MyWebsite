@@ -1,27 +1,60 @@
 $primary-color: #6853D5;
 
 $background-color: #353543 ;
-$secondry-color:hsla(250, 25%, 34%, 0.16);
+$secondry-color:hsla(250, 42%, 39%, 0.16);
 body{
     height: 100%;
     width: 100%;
     background-color: $background-color!important;
     justify-content: center;
     position: relative;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
 }
-.container{
-    position: absolute;
-    top: 50%;
-    max-width: 600px!important;
+nav{
+  width: 100%;
+  padding: 1rem 2rem;
+  a{
+    text-decoration: none;
+    color: $primary-color;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    i {
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+    }
+  }
+}
+.user{
+  height: 400px;
+  background-color: #6853D5;
+  border-radius: 8px;
+  width: 300px;
+  position: relative;
+
+  i{
+    font-size: 10rem;
+    color: white;
+    top: 40%;
     left: 50%;
-    transform: translate(-50% , 40%);
+    transform: translate(-50% ,-50%);
+    position: absolute;
+  }
+}
+.form-container{
+    max-width: 800px!important;
     background-color: $secondry-color!important;
-    margin: auto;
+    height: auto;
+    
+     margin: auto;
 h1{
         color: $primary-color;
+      margin-top: 1rem;
     }
      form{
-
+     padding: 1rem;
     
     label{
         color:white!important;
@@ -33,6 +66,8 @@ h1{
         border-left:none!important;
         border-right:none!important;
         color: $primary-color!important;
+        padding-left: 1.5rem;
+        border-radius: 2rem;
       }
       input:focus{
         outline:  none!important;
@@ -44,9 +79,20 @@ h1{
         background-color: $primary-color;
         outline: unset;
         border: none;
+        border-radius: 2rem;
     }
     button:hover{
         background-color: #8a7ccf!important;
     }
 
 }}
+
+
+#login{
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  &:hover{
+    background-color: #8a7ccf!important;
+  }
+}
