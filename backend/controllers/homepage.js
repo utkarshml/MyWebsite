@@ -4,7 +4,7 @@ import { setCookies } from "../utils/feature.js";
 import userSetHome from "../utils/UserHomedata.js";
 export const home = (req, res) => {
   if (req.user) {
-    res.render("index", userSetHome(req.user.name));
+    res.render("index", userSetHome(req.user));
   } else {
     res.render("index");
   }
@@ -90,7 +90,7 @@ export const userProfile = async (req, res) => {
 };
 
 export const userlogout = (req, res) => {
-  res.cookie("tokken", "logout", {
+  res.cookie("tokken", null , {
     expires: new Date(Date.now()),
     httpOnly: true,
   });
