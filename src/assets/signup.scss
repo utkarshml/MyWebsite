@@ -1,6 +1,6 @@
 $primary-color: #6853D5;
-
 $background-color: #353543 ;
+$font-color-light:black;
 $secondry-color:hsla(250, 42%, 39%, 0.16);
 body{
     height: 100%;
@@ -57,7 +57,7 @@ h1{
      padding: 1rem;
     
     label{
-        color:white!important;
+        color:$font-color-light!important;
       }
       input,textarea{
         background:hsla(250, 25%, 34%, 0.53)!important;

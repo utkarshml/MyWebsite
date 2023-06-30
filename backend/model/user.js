@@ -12,6 +12,15 @@ import mongoose from "mongoose";
         type:String,
         select:false,
         required:true
+    },
+    createdAt:{
+        type:Date,
+        default:Date.now()
+    }
+    ,
+    EmailVerify:{
+        type:Boolean,
+        default:false
     }
 
 })

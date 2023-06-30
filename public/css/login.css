@@ -1,7 +1,7 @@
 body {
   height: 100%;
   width: 100%;
-  background-color: #353543 !important;
+  background-color: white !important;
   justify-content: center;
   position: relative;
   flex-direction: column;
@@ -23,6 +23,27 @@ nav a {
 nav a i {
   font-size: 1.5rem;
   margin-right: 0.5rem;
+}
+
+.theme-icon {
+  position: absolute;
+  width: 3em;
+  height: 2em;
+  background-color: #6853D5;
+  top: 6em;
+  right: 0em;
+  border-radius: 8px 0 0 8px;
+  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.theme-icon i {
+  color: white;
+  font-size: 1.5rem;
 }
 
 .user {
@@ -52,7 +73,7 @@ nav a i {
   margin-top: 1rem;
 }
 .form-container form label {
-  color: white !important;
+  color: black;
 }
 .form-container form input, .form-container form textarea {
   background: hsla(250, 25%, 34%, 0.53) !important;

@@ -1,7 +1,10 @@
-$primary-color: #6853D5;
 
-$background-color: #353543 ;
+$primary-color: #6853D5;
+$background-color:white;
+$font-color-light:black;
 $secondry-color:hsla(250, 42%, 39%, 0.16);
+
+
 body{
     height: 100%;
     width: 100%;
@@ -11,7 +14,14 @@ body{
     flex-direction: column;
     display: flex;
     align-items: center;
+
+
+  
 }
+  .dark-theme{
+      $background-color:  #353543!important;
+      $font-color-light:white!important;
+   }
 nav{
   width: 100%;
   padding: 1rem 2rem;
@@ -27,6 +37,25 @@ nav{
       margin-right: 0.5rem;
     }
   }
+}
+.theme-icon{
+  position: absolute;
+  width: 3em;
+  height: 2em;
+  background-color: $primary-color;
+  top: 6em;
+  right: 0em;
+  border-radius: 8px 0 0 8px;
+  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+}
+.theme-icon i {
+  color: white;
+  font-size: 1.5rem;
 }
 .user{
   height: 400px;
@@ -59,7 +88,7 @@ h1{
 
     
     label{
-        color:white!important;
+        color:$font-color-light;
       }
       input,textarea{
         background:hsla(250, 25%, 34%, 0.53)!important;

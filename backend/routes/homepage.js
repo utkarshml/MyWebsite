@@ -1,5 +1,5 @@
 import  express  from "express";
-import { home , userlogin , userSignup , userAddDatabase , userFromDatabase  , userProfile , userlogout } from "../controllers/homepage.js"
+import { home , userlogin , userSignup , userAddDatabase , userFromDatabase  , userProfile , userlogout  } from "../controllers/homepage.js"
 import bodyParser from "body-parser";
 import {isCookies} from "../middlewares/isCookies.js"
 import { isAuth } from "../middlewares/auth.js";

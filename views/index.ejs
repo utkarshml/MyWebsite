@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<body>
 
 <head>
   <meta charset="utf-8">
@@ -9,8 +9,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
   <!-- ------------------------------aos----------------------------------- -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- ------------------------------Glightbox----------------------------------- -->
+  <link rel="stylesheet" href="./glightbox.min.css">
   <!-- -------------------------------------iconsout------------------------------------- -->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <!-- ----------------------------------------swiper-js----------------------------- -->
@@ -18,7 +23,10 @@
 
   <link href="./style.css" rel="stylesheet" type="text/css" />
 </head>
- 
+ <body>
+  <div class="theme-icon">
+    <i class="uil uil-moon"></i>
+  </div>
   <!-- --------------Navbar------------------- -->
  <!-- navigation bar  -->
  <header class="navbar">
@@ -42,9 +50,9 @@
 
   <% } else { %>
     <div class="register">
-      <div class="login"><a href="/login"><%= locals.name %></a></div>
+      <div class="login"><a href="/user"><%= locals.name %></a></div>
       <form method="post" action="/logout">
-      <div class="signup"><button >logout</button></div></form>
+      <div><button class="signup" style="border: none; color:white;" >logout</button></div></form>
     </div>
   </nav>
     <% } %>
@@ -63,9 +71,10 @@
   <section class="container">
     <div id="home" class="row">
       <div style="height:500px; margin: auto;" class="col-lg-8 col-md-12 d-flex flex-column justify-content-center">
-        <h2 style="color: white;">Hello , I m <span style="color: var(--primary-color);">Utkarsh</span></h2>
+        <h2>Hello , I m<span  style="color: var(--primary-color);" class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
+
         <h1 class="hero-subtitle" style="color: var(--primary-color);">Full Stack Developer</h1>
-        <p style="color: white;">Real life is graph of heart beat.</p>
+        <p>Real life is graph of heart beat.</p>
         <a class="btn btn-sign mx-1" style="width: 6rem;" href="#">Hire Me</a>
         <div class="contianer my-3">
           <i style="font-size:2rem; color:var(--primary-color); margin:0.5rem 0.5rem" class="uil uil-github"></i>
@@ -85,22 +94,29 @@
     <div class="card" style="width: 18rem;">
       <i class="uil uil-cube"></i>
       <div class="card-body">
-        <h5 class="card-title">03</h5>
+        <h5 class="card-title"
+        data-purecounter-start="0"
+        data-purecounter-end="05"
+        >05</h5>
         <h6 class="card-subtitle mb-2 text-muted">Project</h6>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
       <i class="uil uil-user-circle"></i>
       <div class="card-body">
-        <h5 class="card-title">00</h5>
+        <h5 class="card-title" data-purecounter-start="0"
+        data-purecounter-end="0">00</h5>
         <h6 class="card-subtitle mb-2 text-muted">Client</h6>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
       <i class="uil uil-server-network-alt"></i>
       <div class="card-body">
-        <h5 class="card-title">03</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Experiance</h6>
+        <h5 class="card-title" 
+        data-purecounter-start="0"
+        data-purecounter-end="02"
+        >02</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Experiance(Year)</h6>
       </div>
     </div>
     </div>
@@ -111,22 +127,39 @@
 
     <h1 class="text-center style-heading my-5">About us</h1>
     <div class="row rounded mx-auto container about-card pt-3">
-      <div class=" about-img col-lg-6 col-md-12 d-flex justify-content-center">
+      <div class=" about-img col-lg-4 col-md-12 d-flex justify-content-center">
         <img src="../img/my2.png" class="img-fluid" height="400" width="200" alt="...">
       </div>
       <div
-        class="col-lg-6 col-md-12 rounded content d-flex flex-column justify-content-center align-items-lg-start my-md-3 my-sm-3 my-lg-0 my-3">
+        class="col-lg-8 col-md-12 rounded content d-flex flex-column justify-content-center align-items-lg-start my-md-3 my-sm-3 my-lg-0 my-3">
         <h2>Web developer</h2>
         <h1>Utkarsh Jaiswal</h1>
-        <p>In this section, we will delve into the fundamentals of front-end web development. We will explore HTML, the
-          standard markup </p>
-        <a class="btn btn-sign mx-1" style="width: 6rem;" href="#">Download</a>
+        <p>I am  talented in web developer with a passion for creating exceptional online experiences. With expertise in front-end and back-end technologies, they specialize in building modern, user-friendly websites and web applications. </p>
+        <a class="btn d-block btn-sign mx-1" style="width:auto;" href="#">Download CV</a>
+        <div class="row mt-5">
+          <div class="col-lg-6 my-details">
+            <ul>
+              <li><i class="uil uil-arrow-right"></i> <strong>Birthday:</strong> <span>27 Feb 2002</span></li>
+              <li><i class="uil uil-arrow-right"></i><strong>Website:</strong> <span>www.example.com</span></li>
+              <li><i class="uil uil-arrow-right"></i> <strong>Phone:</strong> <span>+91 7905310668</span></li>
+              <li><i class="uil uil-arrow-right"></i> <strong>City:</strong> <span>UP, India</span></li>
+            </ul>
+          </div>
+          <div class="col-lg-6 my-details">
+            <ul>
+              <li><i class="uil uil-arrow-right"></i><strong>Age:</strong> <span>21</span></li>
+              <li><i class="uil uil-arrow-right"></i> <strong>Degree:</strong> <span>Bachlor</span></li>
+              <li><i class="uil uil-arrow-right"></i> <strong>PhEmailone:</strong> <span>utkarshjais8957@gmail.com</span></li>
+              <li><i class="uil uil-arrow-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
   <!-- ------------------About-section-end-------------------- -->
   <!-- -----------------------Skill-section------------------- -->
-  <section id="skill" class="container  data-aos=" zoom-out" mt-5">
+  <section id="skill" class="container  mt-5" >
     <h1 class="text-center style-heading my-5">Skills</h1>
     <div class="row m-auto container">
       <!-- ---------------------progress-bar--------------------- -->
@@ -340,80 +373,170 @@
   <!-- ------------------------Price-section-end------------- -->
 
   <!-- ------------------------Porfolio-section-------------------------------- -->
-  <section id="portfolio" class="container mt-5" data-aos="fade">
+ <!-- ======= Portfolio Section ======= -->
+ <section id="portfolio" class="portfolio section-bg" >
+  <div class="container">
     <h1 class="text-center d-lg-flex d-black  style-heading text-lg-start price-heading my-5">Portfolio <span
-        class=" my-auto mx-3 d-none d-lg-block  mt-5 side-divider"></span></h1>
-       <div class="tabcontainer p-5">
-        <div class="tabbar">
-          <ul class="tab-navbar d-flex flex-wrap">
-       <li class="tab-item"><button data-tab="all" class="tab-button">All</button></li>
-       <li class="tab-item"><button data-tab="html" class="tab-button">Html</button></li>
-       <li class="tab-item"><button data-tab="css" class="tab-button">Css</button></li>
-       <li class="tab-item"><button data-tab="js" class="tab-button">javascript</button></li>
-       <div class="slider"></div>
-          </ul>
-        </div>
-        <div class="tab-content d-flex flex-wrap justify-content-center" >
-          <div class="card-image" data-tab="html">
-            <div class="card-content">
-    
-            </div>
-          </div>
-          <div class="card-image" data-tab="css">
-            <div class="card-content">
-              <h1>Our Css Project</h1>
-            </div>
-          </div>
-          <div class="card-image" data-tab="js">
-          </div>
-          <div class="card-image" data-tab="js">
-          </div>
-          <div class="card-image" data-tab="js">
-          </div>
-        </div>
-       </div>
+      class=" my-auto mx-3 d-none d-lg-block  mt-5 side-divider"></span></h1>
+
+    <div class="row">
+      <div class="col-lg-12 d-flex justify-content-center">
+        <ul id="portfolio-flters">
+          
+          <li data-filter=".filter-app" class="filter-active">App</li>
+          <li data-filter=".filter-card">Card</li>
+          <li data-filter=".filter-web">Web</li>
+          <li data-filter="*" >All</li>
+        </ul>
+      </div>
     </div>
-  </section>
-  <!-- -----------------------------Portfolio-section-end------------------------- -->
 
-  <section id="contact" class="container">
-    <h1 class="text-center style-heading my-5">Contact</h1>
-    <div class="row ">
-      <div class="col-lg-7 col-12 about-card p-5 rounded" data-aos="zoom-in">
-        <form class="my-3">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter Your Name">
-          <div class="my-3">
-            <label for="Email" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="Email" placeholder="Enter Your Email">
+    <div class="row portfolio-container" >
 
-
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app ">
+        <div class="portfolio-wrap">
+          <img src="./img/img1.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="./img/img1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="uil uil-apps"></i></a>
           </div>
-          <div class="my-3">
-            <label for="messege" class="form-label">Messege</label>
-            <textarea class="form-control" id="Messege" rows="3"></textarea>
-          </div> <button type="submit" class="btn btn-sign">Submit</button>
+        </div>
       </div>
 
-      </form>
-      <div class="col-lg-5 col-12"></div>
+      <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+        <div class="portfolio-wrap">
+          <img src="./img/img1.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="./img/img1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="uil uil-apps"></i></a>
+          </div>
+        </div>
+      </div>
 
-  </section>
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div class="portfolio-wrap">
+          <img src="./img/img1.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="./img/img1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="uil uil-apps"></i></a>
+    
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+        <div class="portfolio-wrap">
+          <img src="./img/img1.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="./img/img1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="uil uil-apps"></i></a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+        <div class="portfolio-wrap">
+          <img src="./img/img1.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="./img/img1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="uil uil-apps"></i></a>
+    
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+        <div class="portfolio-wrap">
+          <img src="./img/img1.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="./img/img1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="uil uil-apps"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+  <!-- -----------------------------Portfolio-section-end------------------------- -->
+
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact" data-aos="zoom-in">
+  <div class="container">
+
+    <h1 class="text-center style-heading my-5">Contact</h1>
+    <div class="row" data-aos="fade-in">
+
+      <div class="col-lg-5 d-flex align-items-stretch">
+        <div class="info">
+          <div class="address">
+            <i class="uil uil-map-marker-alt"></i>
+            <h4>Location:</h4>
+            <p>Naini Prayagraj UP 211008</p>
+          </div>
+
+          <div class="email">
+            <i class="uil uil-at"></i>
+            <h4>Email:</h4>
+            <p>utkarshjais8957@gmail.com</p>
+          </div>
+
+          <div class="phone">
+            <i class="uil uil-phone-volume"></i>
+            <h4>Call:</h4>
+            <p>+91 7905310668</p>
+          </div>
+
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1802.1065075618174!2d81.86126992405511!3d25.39767930047594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39854a30b6207115%3A0x6f63e3ba0029dcf3!2sNaini%2C%20Prayagraj%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1688042635999!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+        </div>
+
+      </div>
+
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="name">Your Name</label>
+              <input type="text" name="name" class="form-control" id="name" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="name">Your Email</label>
+              <input type="email" class="form-control" name="email" id="email" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="name">Subject</label>
+            <input type="text" class="form-control" name="subject" id="subject" required>
+          </div>
+          <div class="form-group">
+            <label for="name">Message</label>
+            <textarea class="form-control" name="message" rows="10" required></textarea>
+          </div>
+          <div class="my-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your message has been sent. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Send Message</button></div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- End Contact Section -->
   <!-- -----------------------------End-contant---------------------- -->
  <%- include("./footer") -%>
-  <!--
-  This script places a badge on your repl's full-browser view back to your repl's cover
-  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
-  teal, blue, blurple, magenta, pink!
-  -->
-
 </body>
 <script src="script.js"></script>
-<script src="anime.min.js"></script>
+<script src="./anime.min.js"></script>
 <!-- -------------------------------Boostrap-js--------------------------------- -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <!-- -------------------------------swiper-js-------------------------------- -->
+<script src="glightbox.min.js"></script>
+<script>
+  const portfolioLightbox = GLightbox({
+    selector: '.portfolio-lightbox'
+  });
+
+</script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script type="module">
   import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
@@ -448,11 +571,17 @@
   });
 
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+<script>
+    new PureCounter({
+      selector: ".card-title", 
+
+    });
+</script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
   AOS.init({
     offset: 200,
   });
 </script>
-
 </html>

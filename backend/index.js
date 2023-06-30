@@ -7,6 +7,8 @@ import bodyParser from "body-parser"
 import HomeRoute from './routes/homepage.js'
 export const app = express()
 const configpath = path.join(path.resolve() , "/backend/.env")
+import {ErrorMiddlewares} from "../backend/middlewares/ErrorMiddlewares.js"
+import cors from "cors"
 const pathofenv =  dotenv.config({
     path:configpath
 })
@@ -19,3 +21,9 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static(path.join(path.resolve() , "public")))
 app.use(express.static(path.join(path.resolve() , "/src/assets/")))
 app.use(HomeRoute)
+app.use(ErrorMiddlewares)
+app.use(cors({
+    origin : [process.env.HOST_URL],
+    methods : ["GET" , "PUT" , "POST"],
+    credentials : true
+}))

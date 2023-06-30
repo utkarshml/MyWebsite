@@ -1,4 +1,3 @@
-
 const navlinks = document.querySelectorAll(".nav-links");
 const burger = document.querySelector(".togglebtn");
 const nav = document.querySelector("nav");
@@ -23,6 +22,36 @@ navlinks.forEach((item) => {
 
 $(".plan-list li").prepend(`<i class="uil uil-check"></i>`)
 const tool = Array.from($(".bar-tool"));
+
+
+
+ /**
+   * Navbar links active state on scroll
+   */
+  let navbarlinks = $(".navbar nav .nav-links")
+ const navbarlinksActive = () => {
+  let position = $(window).scrollTop() + 200;
+  navbarlinks.each(function() {
+    let navbarlink = $(this);
+    if (!navbarlink.prop('hash')) return;
+    let section = $(navbarlink.prop('hash'));
+    if (!section.length) return;
+    if (position >= section.offset().top && position <= (section.offset().top + section.outerHeight())) {
+      navbarlink.addClass('active');
+    } else {
+      navbarlink.removeClass('active');
+    }
+  });
+};
+
+$(document).ready(function() {
+ navbarlinksActive();
+});
+
+$(window).scroll(function() {
+ navbarlinksActive();
+});
+
 
 
 $(".nav-links").click(function(){
@@ -73,3 +102,86 @@ $(window).scroll(function(){
   round: 1, })}
   }
 })
+ let  $grid = $('.portfolio-container').isotope({
+  // options
+  itemSelector: '.portfolio-item',
+  layoutMode: 'fitRows'
+});
+
+$("#portfolio-flters li").click(function(e){
+  $("#portfolio-flters li").removeClass("filter-active")
+  $(this).addClass("filter-active")
+  let filter  = $(this).attr("data-filter")
+  $grid.isotope({ filter: filter });
+})
+// theme auto save 
+if(localStorage.getItem("theme") == "dark"){
+  $("body").addClass("dark-theme");
+  $(".theme-icon i").addClass("uil-sun")
+  $(".theme-icon i").removeClass("uil-moon")
+}
+else if(localStorage.getItem("theme") == "light") {
+  $("body").removeClass("dark-theme");
+  $(".theme-icon i").addClass("uil-moon")
+  $(".theme-icon i").removeClass("uil-sun")
+}
+
+$(".theme-icon").on("click" , function(){
+  $("body").toggleClass("dark-theme");
+  if($("body").hasClass("dark-theme")){
+    $(".theme-icon i").addClass("uil-sun")
+    $(".theme-icon i").removeClass("uil-moon")
+    localStorage.setItem("theme", "dark")
+  }
+  else{
+    $(".theme-icon i").addClass("uil-moon")
+    $(".theme-icon i").removeClass("uil-sun")
+    localStorage.setItem("theme", "light")
+  }
+})
+
+const typedTextSpan = document.querySelector(".typed-text");
+const cursorSpan = document.querySelector(".cursor");
+
+const textArray = ["Utkarsh", "Student", "Coder"];
+const typingDelay = 200;
+const erasingDelay = 50;
+const newTextDelay = 2000; // Delay between current and next text
+let textArrayIndex = 0;
+let charIndex = 0;
+
+function type() {
+  if (charIndex < textArray[textArrayIndex].length) {
+    if (!cursorSpan.classList.contains("typing"))
+      cursorSpan.classList.add("typing");
+    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingDelay);
+  } else {
+    cursorSpan.classList.remove("typing");
+    setTimeout(erase, newTextDelay);
+  }
+}
+
+function erase() {
+  if (charIndex > 0) {
+    if (!cursorSpan.classList.contains("typing"))
+      cursorSpan.classList.add("typing");
+    typedTextSpan.textContent = textArray[textArrayIndex].substring(
+      0,
+      charIndex - 1
+    );
+    charIndex--;
+    setTimeout(erase, erasingDelay);
+  } else {
+    cursorSpan.classList.remove("typing");
+    textArrayIndex++;
+    if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+    setTimeout(type, typingDelay + 1000);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  // On DOM Load initiate the effect
+  if (textArray.length) setTimeout(type, newTextDelay + 20);
+});

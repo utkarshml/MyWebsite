@@ -55,7 +55,7 @@ nav a i {
   padding: 1rem;
 }
 .form-container form label {
-  color: white !important;
+  color: black !important;
 }
 .form-container form input, .form-container form textarea {
   background: hsla(250, 25%, 34%, 0.53) !important;
