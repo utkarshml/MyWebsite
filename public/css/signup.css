@@ -13,6 +13,9 @@ body {
   background-color: #353543 !important;
   color: white;
 }
+.dark-theme label {
+  color: white !important;
+}
 
 nav {
   width: 100%;
