@@ -9,6 +9,11 @@ body {
   align-items: center;
 }
 
+.dark-theme {
+  background-color: #353543 !important;
+  color: white;
+}
+
 nav {
   width: 100%;
   padding: 1rem 2rem;
@@ -23,6 +28,27 @@ nav a {
 nav a i {
   font-size: 1.5rem;
   margin-right: 0.5rem;
+}
+
+.theme-icon {
+  position: absolute;
+  width: 3em;
+  height: 2em;
+  background-color: #6853D5;
+  top: 6em;
+  right: 0em;
+  border-radius: 8px 0 0 8px;
+  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.theme-icon i {
+  color: white;
+  font-size: 1.5rem;
 }
 
 .user {
@@ -58,28 +84,29 @@ nav a i {
   color: black !important;
 }
 .form-container form input, .form-container form textarea {
-  background: hsla(250, 25%, 34%, 0.53) !important;
-  border-bottom: 2px solid #6853D5 !important;
-  border-top: none !important;
-  border-left: none !important;
-  border-right: none !important;
+  background: hsla(250, 25%, 34%, 0.16) !important;
   color: #6853D5 !important;
   padding-left: 1.5rem;
-  border-radius: 2rem;
+  border-radius: 8px !important;
 }
 .form-container form input:focus {
   outline: none !important;
   box-shadow: none !important;
-  border-bottom: 2px solid #8a7ccf !important;
+  border: 2px solid #8E7EDB !important;
 }
 .form-container form button {
   background-color: #6853D5;
   outline: unset;
   border: none;
-  border-radius: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
 }
 .form-container form button:hover {
   background-color: #8a7ccf !important;
+}
+
+#signup {
+  padding: 0.4rem 1.3rem !important;
 }
 
 #login {

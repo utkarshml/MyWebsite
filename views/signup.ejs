@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,14 +10,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   </head>
-  <style>
-    body{
-      position: relative;
-    }
-  </style>
   <body>
    
     <%- include("./loginnav") %>
+    <div class="theme-icon">
+      <i class="uil uil-moon"></i>
+    </div>
     <div class="container row form-container p-5 rounded">
       <div class=" user col-12 col-lg-6">
              <div class="container">
@@ -41,11 +40,38 @@
             <%- include("./alert") %>
             <button id="signup" type="submit" class="btn btn-primary mx-auto d-block">Register</button>
           </form>
-          <a id="login" href="/login" class="btn mt-3 w-100 rounded-pill btn-primary mx-auto">Login</a>
+          <a id="login" href="/login" class="btn mt-3 w-100 btn-primary mx-auto">Login</a>
         </div>
     </div>
     <!-- -------------------------------Boostrap-js--------------------------------- -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script>
+        // theme auto save 
+if(localStorage.getItem("theme") == "dark"){
+  $("body").addClass("dark-theme");
+  $(".theme-icon i").addClass("uil-sun")
+  $(".theme-icon i").removeClass("uil-moon")
+}
+else if(localStorage.getItem("theme") == "light") {
+  $("body").removeClass("dark-theme");
+  $(".theme-icon i").addClass("uil-moon")
+  $(".theme-icon i").removeClass("uil-sun")
+}
+
+$(".theme-icon").on("click" , function(){
+  $("body").toggleClass("dark-theme");
+  if($("body").hasClass("dark-theme")){
+    $(".theme-icon i").addClass("uil-sun")
+    $(".theme-icon i").removeClass("uil-moon")
+    localStorage.setItem("theme", "dark")
+  }
+  else{
+    $(".theme-icon i").addClass("uil-moon")
+    $(".theme-icon i").removeClass("uil-sun")
+    localStorage.setItem("theme", "light")
+  }
+})
+      </script>
   </body>
 </html>

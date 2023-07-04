@@ -4,8 +4,11 @@ import ErrorHandler from "../utils/error.js";
  const mongodb =(next) =>{ 
      mongoose.connect( process.env.MONGO , {
     dbName:"PortfolioUser"
-}).then(()=>{
+}).then((data)=>{
     console.log("database is connected")
-}).catch(e => next(new ErrorHandler("Databse not Connect")) )
-} 
+}).catch((err) => {
+   new ErrorHandler(err)
+})
+ }
+
 export default mongodb;

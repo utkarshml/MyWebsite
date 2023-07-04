@@ -3,6 +3,7 @@ import bcryt from "bcrypt";
 import { setCookies } from "../utils/feature.js";
 import userSetHome from "../utils/UserHomedata.js";
 import ErrorHandler from "../utils/error.js";
+import { render } from "ejs";
 
 
 
@@ -32,6 +33,11 @@ export const userSignup = (req, res) => {
     res.render("signup");
   }
 };
+// Email verification
+export const emailVerify = (req, res) => {
+  res.render("otp");
+};
+
 // ---------------------------Post-Routes---------------
 // Registration function
 export const userAddDatabase = async (req, res , next) => {
@@ -48,6 +54,9 @@ export const userAddDatabase = async (req, res , next) => {
           password: passwordhashing,
         });
         setCookies(res, 201, user);
+        res.render("index" ,{
+          name : user.name
+        })
       } else {
         res.status(400).render("signup", {
           display: "block",
@@ -62,7 +71,7 @@ export const userAddDatabase = async (req, res , next) => {
   }
 };
 // login function 
-export const userFromDatabase = async (req, res) => {
+export const userFromDatabase = async (req, res , next) => {
 
   try{
     if (req.user) { next(new ErrorHandler("! You are already login", 204)) } else {
@@ -90,11 +99,11 @@ export const userFromDatabase = async (req, res) => {
     };
   }
   catch(err){
-    next(new ErrorHandler("Bad Request", 400))
+next(new ErrorHandler("Bad Request", 400))
   }
    }
 // user profile
-export const userProfile = async (req, res) => {
+export const userProfile = async (req, res , next) => {
 try{  res.render("user" ,{
     name: req.user.name,
     email:req.user.email

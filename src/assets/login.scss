@@ -18,10 +18,14 @@ body{
 
   
 }
-  .dark-theme{
-      $background-color:  #353543!important;
-      $font-color-light:white!important;
+.dark-theme{
+    background-color: #353543!important;
+    color: white;
+   label{
+    color: white!important;
    }
+   }
+
 nav{
   width: 100%;
   padding: 1rem 2rem;
@@ -76,7 +80,7 @@ nav{
 }
 .form-container{
     max-width: 800px!important;
-    background-color: $secondry-color!important;
+    background-color: transparent!important;
     height: auto;
     
      margin: auto;
@@ -91,26 +95,26 @@ h1{
         color:$font-color-light;
       }
       input,textarea{
-        background:hsla(250, 25%, 34%, 0.53)!important;
-       border-bottom:2px solid $primary-color!important;
-        border-top:none!important;
-        border-left:none!important;
-        border-right:none!important;
+        background:hsla(250, 25%, 34%, 0.5)!important;
         color: $primary-color!important;
         padding-left: 1.5rem;
-        border-radius: 2rem;
+        border: none;
+        border-radius: 8px;
       }
       input:focus{
         outline:  none!important;
-        box-shadow: none!important;
-        border-bottom: 2px solid #8a7ccf !important;
+        box-shadow: unset!important;
+        border: 2px solid #8a7ccf !important;
+      }
+      input:active{
+        box-shadow: unset!important;
       }
 
     button{
         background-color: $primary-color;
         outline: unset;
         border: none;
-        border-radius: 2rem;
+        border-radius: 8px;
         padding: 0.4rem 1.3rem;
     }
     button:hover{

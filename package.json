@@ -32,7 +32,8 @@
     "otp-generator": "^4.0.1",
     "postcss-cli": "^9.1.0",
     "sass": "^1.49.8",
-    "sass-loader": "^13.3.2"
+    "sass-loader": "^13.3.2",
+    "vercel": "^31.0.1"
   },
   "keywords": [],
   "author": "",
