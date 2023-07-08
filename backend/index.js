@@ -23,7 +23,7 @@ app.use(express.static(path.join(path.resolve() , "/src/assets/")))
 app.use(HomeRoute)
 app.use(ErrorMiddlewares)
 app.use(cors({
-    origin : [process.env.HOST_URL],
+    origin : [process.env.HOST_URL || "localhost"],
     methods : ["GET" , "PUT" , "POST"],
     credentials : true
 }))

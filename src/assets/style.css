@@ -284,25 +284,25 @@ html {
     background: hsla(250, 25%, 34%, 0.53)!important;
     overflow: visible;
   }
-
+  @keyframes bar {
+    0%{
+      width: 0%;
+    }
+    100%{
+      opacity: 1;
+    }
+   }
   .progress-bar{
     position: relative;
     background-color: var(--primary-color);
     overflow: visible;
     border-radius: 2rem;
   }
-  @keyframes progressing {
-    0% {
-      width: 0%;
-      box-sizing: border-box;
-    }
-    100% {
-      opacity: 1;
-    }
-  }  
+.progressbar-animation{
+  animation: bar 1.5s ease-in;
+}
   .html{
     width: 95%;
-    animation: progressing 0.4s linear;
   }
   .css{
     width: 90%;
@@ -314,6 +314,15 @@ html {
     width: 70%;
   }.jquery{
     width: 65%;
+  }
+  .nodejs{
+    width: 60%;
+  }
+  .expressjs{
+    width: 58%;
+  }
+  .mongodb{
+    width: 55%;
   }
   .python{
     width: 50%;
@@ -573,6 +582,7 @@ html {
   
   .portfolio-details .portfolio-details-slider img {
     width: 100%;
+    object-fit: cover;
   }
   
   .portfolio-details .portfolio-details-slider .swiper-pagination {

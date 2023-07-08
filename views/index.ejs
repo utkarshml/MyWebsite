@@ -3,6 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
+  <link rel="icon" href="./img/favicon-16x16.png" type="image/x-icon">
+  <meta name="description" content="Welcome to Utkarsh's Portfolio. Browse through my collection of projects and creative work showcasing my skills in web design and web development.">
+  <meta property="og:url" content="">
+  <meta name="keywords" content="Portfolio
+  Creative
+  Design
+  Art
+  Graphic Design
+  Web Design
+  Illustration
+  Photography
+  Visual Arts
+  Freelancer
+  Digital Art
+  Branding
+  UI/UX Design
+  Animation
+  Responsive Design
+  Typography
+  Logo Design
+  Print Design
+  Motion Graphics
+  User Experience
+  Case Studies
+  Art Direction
+  Visual Identity
+  Interactive Design
+  Digital Marketing">
+
   <title>Utkarsh - Portfolio</title>
   <!-- -----------------------------------JQuery-cdn--------------------------- -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
@@ -30,7 +59,7 @@
  <!-- navigation bar  -->
  <header class="navbar">
   <div class="logo">
-    <a style="color: var(--primary-color);" href="#">Utkarsh<span>.</span></a>
+    <a class="d-flex" style="color: var(--primary-color);" href="#"><img style="margin-right:5px; width:35px" src="./img/favicon-32x32.png" alt="">tkarsh<span>.</span></a>
   </div>
   <nav>
     <ul>
@@ -162,7 +191,7 @@
     <h1 class="text-center style-heading my-5">Skills</h1>
     <div class="row m-auto container">
       <!-- ---------------------progress-bar--------------------- -->
-      <div class=" skill-container rounded col-lg-8 col-12 m-auto p-3" data-aos="zoom-out">
+      <div class=" skill-container rounded col-lg-8 col-12 m-auto p-3" data-aos="zoom-out" data-aos-id="progressBar">
         <div class="progress-div">
           <h3 class="progressbar-h3">Html</h3>
           <div class="progress">
@@ -187,6 +216,10 @@
             </div>
           </div>
         </div>
+    
+     
+        
+       
         <div class="progress-div">
           <h3 class="progressbar-h3">figma</h3>
           <div class="progress">
@@ -210,6 +243,30 @@
             <div class="progress-bar jquery" role="progressbar" aria-valuenow="65" aria-valuemin="0"
               aria-valuemax="100">
               <div class="bar-tool">65%</div>
+            </div>
+          </div>
+        </div>
+        <div class="progress-div">
+          <h4 class="progressbar-h3">NodeJs</h4>
+          <div class="progress ">
+            <div class="progress-bar nodejs" role="progressbar">
+              <div class="bar-tool">60%</div>
+            </div>
+          </div>
+        </div>
+        <div class="progress-div">
+          <h4 class="progressbar-h3">ExpressJs</h4>
+          <div class="progress ">
+            <div class="progress-bar expressjs" role="progressbar">
+              <div class="bar-tool">58%</div>
+            </div>
+          </div>
+        </div>
+        <div class="progress-div">
+          <h4 class="progressbar-h3">MongoDB</h4>
+          <div class="progress ">
+            <div class="progress-bar mongodb" role="progressbar">
+              <div class="bar-tool">55%</div>
             </div>
           </div>
         </div>
@@ -320,17 +377,17 @@
           <div class="swiper-slide">
             <h4 style="transform: translate(-63px, 40px);">$</h4>
             <h4><span class="price-tag">5</span>/hr</h4>
-            <button class="btn btn-sign">Buy Now</button>
+            <a href="#contact" class="btn btn-sign">Buy Now</a>
           </div>
           <div class="swiper-slide">
             <h4 style="transform: translate(-63px, 40px);">$</h4>
             <h4><span class="price-tag">10</span>/hr</h4>
-            <button class="btn btn-sign">Buy Now</button>
+            <a href="#contact" class="btn btn-sign">Buy Now</a>
           </div>
           <div class="swiper-slide">
             <h4 style="transform: translate(-63px, 40px);">$</h4>
             <h4><span class="price-tag">15</span>/hr</h4>
-            <button class="btn  btn-sign">Buy Now</button>
+            <a href="#contact" class="btn  btn-sign">Buy Now</a>
           </div>
         </div>
       </div>
@@ -340,17 +397,23 @@
           <div class=" card-0 active-card swiper-card">
             <h1>Our Basic Plan</h1>
             <ul class="plan-list">
-              <li>Work Fast no tension</li>
-              <li>Work Fast no tension</li>
-              <li>Work Fast no tension</li>
+              <li>Build a simple static (e.g., home, about, contact).</li>
+              <li>Template-Based Design</li>
+              <li>Basic Navigation and Layout</li>
+              <li>Contact Form</li>
+              <li>Limited Revisions</li>
+              <li>Minimal Content Integration</li>
 
           </div>
           <div class=" card-1 swiper-card">
             <h1 class="text-center">Our Standard Plan</h1>
             <ul class="plan-list">
-              <li>Work Fast no tension</li>
-              <li>Work Fast no tension</li>
-              <li>Work Fast no tension</li>
+              <li>Access Basic Plan</li>
+              <li>Enhance Design and Customization</li>
+              <li>Additional Pages and Sections</li>
+              <li>Advanced Form Functionality</li>
+              <li>Content Integration</li>
+              <li>SEO Optimization</li>
             </ul>
 
           </div>
@@ -381,73 +444,71 @@
     <div class="row">
       <div class="col-lg-12 d-flex justify-content-center">
         <ul id="portfolio-flters">
+          <li data-filter="*" class="filter-active">All</li>
+          <li data-filter=".filter-beginner" >beginner</li>
+          <li data-filter=".filter-intermidiate">Intermidiate</li>
+          <li data-filter=".filter-advance">Advance</li>
           
-          <li data-filter=".filter-app" class="filter-active">App</li>
-          <li data-filter=".filter-card">Card</li>
-          <li data-filter=".filter-web">Web</li>
-          <li data-filter="*" >All</li>
         </ul>
       </div>
     </div>
 
     <div class="row portfolio-container" >
 
-      <div class="col-lg-4 col-md-6 portfolio-item filter-app ">
+      <div class="col-lg-4 col-md-6 portfolio-item filter-intermidiate">
         <div class="portfolio-wrap">
-          <img src="./img/img1.jpg" class="img-fluid" alt="">
+          <img src="./img/BackendAPI.jpeg" class="img-fluid" alt="Backend API">
           <div class="portfolio-links">
-            <a href="./img/img1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="uil uil-apps"></i></a>
+            <a href="./img/BackendAPI.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Backend API"><i class="uil uil-apps"></i></a>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+      <div class="col-lg-4 col-md-6 portfolio-item filter-intermidiate">
         <div class="portfolio-wrap">
-          <img src="./img/img1.jpg" class="img-fluid" alt="">
+          <img src="./img/BackendByNode.jpeg" class="img-fluid" alt="BackendByNode">
           <div class="portfolio-links">
-            <a href="./img/img1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="uil uil-apps"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-        <div class="portfolio-wrap">
-          <img src="./img/img1.jpg" class="img-fluid" alt="">
-          <div class="portfolio-links">
-            <a href="./img/img1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="uil uil-apps"></i></a>
+            <a href="./img/BackendByNode.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="BackendByNode"><i class="uil uil-apps"></i></a>
     
           </div>
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+      <div class="col-lg-4 col-md-6 portfolio-item filter-intermidiate">
         <div class="portfolio-wrap">
-          <img src="./img/img1.jpg" class="img-fluid" alt="">
+          <img src="./img/Expense_calander.jpeg" class="img-fluid" alt="Expense_calander">
           <div class="portfolio-links">
-            <a href="./img/img1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="uil uil-apps"></i></a>
+            <a href="./img/Expense_calander.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Expense_calander"><i class="uil uil-apps"></i></a>
 
           </div>
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+      <div class="col-lg-4 col-md-6 portfolio-item filter-advance">
         <div class="portfolio-wrap">
-          <img src="./img/img1.jpg" class="img-fluid" alt="">
+          <img src="./img/Web capture_8-7-2023_94721_myportfolio-cttl.onrender.com.jpeg" class="img-fluid" alt="this_portfolio">
           <div class="portfolio-links">
-            <a href="./img/img1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="uil uil-apps"></i></a>
+            <a href="./img/Web capture_8-7-2023_94721_myportfolio-cttl.onrender.com.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="My Portfolio"><i class="uil uil-apps"></i></a>
     
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+      <div class="col-lg-4 col-md-6 portfolio-item filter-beginner">
         <div class="portfolio-wrap">
-          <img src="./img/img1.jpg" class="img-fluid" alt="">
+          <img src="./img/SurveyForm.png" class="img-fluid" alt="SurveyForm">
           <div class="portfolio-links">
-            <a href="./img/img1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="uil uil-apps"></i></a>
+            <a href="./img/SurveyForm.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SurveyForm"><i class="uil uil-apps"></i></a>
           </div>
         </div>
       </div>
-
+      <div class="col-lg-4 col-md-6 portfolio-item filter-beginner">
+        <div class="portfolio-wrap">
+          <img src="./img/AnalogWatch.jpeg" class="img-fluid" alt="Analog Watch">
+          <div class="portfolio-links">
+            <a href="./img/AnalogWatch.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Analog Clock"><i class="uil uil-apps"></i></a>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -551,7 +612,7 @@
   var swiper = new Swiper(".mySwiper", {
     effect: "cards",
     grabCursor: true,
-    initialSlide: 1,
+    initialSlide: 0,
     on: {
       slideChange: function () {
         var activeSlideIndex = this.activeIndex;
@@ -582,5 +643,9 @@
   AOS.init({
     offset: 200,
   });
+  const handleCustomEvent = () =>{
+    $(".progress-bar").addClass("progressbar-animation")
+  }
+  document.addEventListener('aos:in:progressBar', handleCustomEvent);
 </script>
 </html>

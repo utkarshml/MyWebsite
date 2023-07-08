@@ -91,6 +91,7 @@ else if(position < 70){
 });
 
 
+
 $(window).scroll(function(){
   let ele = $("#skill")
   if(window.pageYOffset > ele[0].offsetTop){
