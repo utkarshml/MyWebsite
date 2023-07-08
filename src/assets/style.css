@@ -1046,8 +1046,13 @@ html {
           .baractive  .bar-3{
               display: none;
           }
+          .portfolio #portfolio-flters li {
+            height: auto;
+          }
 
         }
+
+
         /* body {
           font-family: Arial, sans-serif;
           display: flex;
