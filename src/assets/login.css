@@ -1,0 +1,141 @@
+body {
+  height: 100%;
+  width: 100%;
+  background-color: white !important;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+.dark-theme {
+  background-color: #353543 !important;
+  color: white;
+}
+.dark-theme label {
+  color: white !important;
+}
+
+nav {
+  width: 100%;
+  padding: 1rem 2rem;
+}
+nav a {
+  text-decoration: none;
+  color: #6853D5;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+nav a i {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.theme-icon {
+  position: absolute;
+  width: 3em;
+  height: 2em;
+  background-color: #6853D5;
+  top: 6em;
+  right: 0em;
+  border-radius: 8px 0 0 8px;
+  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.theme-icon i {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.user {
+  height: 400px;
+  background-color: #6853D5;
+  border-radius: 8px;
+  width: 300px;
+  position: relative;
+}
+.user i {
+  font-size: 10rem;
+  color: white;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.form-container {
+  max-width: 800px !important;
+  background-color: transparent !important;
+  height: auto;
+  margin: auto;
+}
+.form-container h1 {
+  color: #6853D5;
+  margin-top: 1rem;
+}
+.form-container form label {
+  color: black;
+}
+.form-container form input, .form-container form textarea {
+  background: hsla(250, 25%, 34%, 0.5) !important;
+  color: #6853D5 !important;
+  padding-left: 1.5rem;
+  border: none;
+  border-radius: 8px;
+}
+.form-container form input:focus {
+  outline: none !important;
+  box-shadow: unset !important;
+  border: 2px solid #8a7ccf !important;
+}
+.form-container form input:active {
+  box-shadow: unset !important;
+}
+.form-container form button {
+  background-color: #6853D5;
+  outline: unset;
+  border: none;
+  border-radius: 8px;
+  padding: 0.4rem 1.3rem;
+}
+.form-container form button:hover {
+  background-color: #8a7ccf !important;
+}
+
+#signup {
+  background-color: #6853D5 !important;
+  margin-top: 2.5rem !important;
+  border: none;
+  padding: 0.5rem 0;
+}
+#signup:hover {
+  background-color: #8a7ccf !important;
+}
+
+.alert {
+  display: none;
+  background-color: rgba(230, 160, 160, 0.4862745098) !important;
+  color: white !important;
+  border-radius: 2rem !important;
+  padding: 0.5rem 1rem !important;
+  margin-top: 1rem !important;
+  text-align: center;
+  width: 100%;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.alert i {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.block {
+  display: block !important;
+}/*# sourceMappingURL=login.css.map */
