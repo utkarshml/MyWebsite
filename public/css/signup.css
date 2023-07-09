@@ -53,8 +53,8 @@ nav a i {
   color: white;
   font-size: 1.5rem;
 }
-.theme-icon i label {
-  color: white !important;
+.theme-icon i form label {
+  color: black;
 }
 
 .user {
@@ -87,7 +87,7 @@ nav a i {
   padding: 1rem;
 }
 .form-container form label {
-  color: black !important;
+  color: black;
 }
 .form-container form input, .form-container form textarea {
   background: hsla(250, 25%, 34%, 0.16) !important;

@@ -4,8 +4,9 @@ import { setCookies } from "../utils/feature.js";
 import userSetHome from "../utils/UserHomedata.js";
 import ErrorHandler from "../utils/error.js";
 import { render } from "ejs";
-
-
+import { OtpSender } from "../utils/otpAuth.js";
+import jwt from 'jsonwebtoken'
+import otpModel from "../model/otpgen.js";
 
 // ----------------------Get-Routes---------------
 
@@ -28,35 +29,62 @@ export const userlogin = (req, res) => {
 //Registration
 export const userSignup = (req, res) => {
   if (req.user) {
-    res.render("index", userSetHome(req.user));
+    res.render("index",
+     userSetHome(req.user),
+     );
   } else {
     res.render("signup");
   }
 };
 // Email verification
-export const emailVerify = (req, res) => {
-  res.render("otp");
+export const verifyPage = async (req, res) => {
+  const par = await req.params
+   res.render("otp" ,{
+    params:par.id
+   })
 };
-
+export const verifyEmail = async (req , res)=>{
+  const {id} = req.params
+  const {digit1 , digit2 ,digit3 ,digit4}= req.body
+  const otp = `${digit1}${digit2}${digit3}${digit4}`
+  const decodedOtp = jwt.verify(id , process.env.TOKEN_SECRET || "kdjfdfhjdhfkjdhjkdbh")
+  const otpDetails = await otpModel.findOne({id:decodedOtp._id})
+  const userDetails = await databseModel.findById(decodedOtp._id)
+  console.log(otp , decodedOtp , otpDetails, userDetails)
+  if(otpDetails.otp  === otp){
+   await databseModel.updateOne({ _id:userDetails._id } , 
+    {  $set:{
+      EmailVerify : true }
+    })
+    res.redirect("/")
+  }
+  else{
+    res.status(400).render("otp" ,{
+      params:id,
+      alert:"! Incorrect OTP"
+      })
+}
+}
 // ---------------------------Post-Routes---------------
 // Registration function
 export const userAddDatabase = async (req, res , next) => {
   try{
     const { name, email, password } = req.body;
-    const isUser = await databseModel.findOne({ email });
-    const passwordhashing = await bcryt.hash(password, 10);
+    const emailFillter = email.toLowerCase()
+    const isUser = await databseModel.findOne({ email:emailFillter });
+    
     if (req.user) { next(new ErrorHandler("! You are already login", 204))}
     else {
       if (!isUser) {
+        const passwordhashing = await bcryt.hash(password, 10);
         const user = await databseModel.create({
           name,
-          email,
+          email:emailFillter,
           password: passwordhashing,
         });
-        setCookies(res, 201, user);
-        res.render("index" ,{
-          name : user.name
-        })
+        OtpSender(user , res)
+        const tokengen = await setCookies(res, 201, user);
+        res.redirect(`/verify/${tokengen}`)
       } else {
         res.status(400).render("signup", {
           display: "block",
@@ -67,7 +95,9 @@ export const userAddDatabase = async (req, res , next) => {
     }
   }
   catch(err){
-    next(new ErrorHandler("Bad Request", 400))
+    next(new ErrorHandler(err,400))
+    console.log(err)
+
   }
 };
 // login function 

@@ -8,4 +8,5 @@ export const setCookies = async (res , status , user) =>{
         sameSite : process.env.NODE_ENV === 'Devolopment' || "Devolopment" ? "lax": "none",
         secure :  process.env.NODE_ENV === 'Devolopment' || "Devolopment" ? false : true
     })
+    return cookestoken;
 }

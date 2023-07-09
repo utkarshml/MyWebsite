@@ -324,6 +324,14 @@ nav ul li .nav-links:hover {
   overflow: visible;
 }
 
+@keyframes bar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .progress-bar {
   position: relative;
   background-color: var(--primary-color);
@@ -331,18 +339,12 @@ nav ul li .nav-links:hover {
   border-radius: 2rem;
 }
 
-@keyframes progressing {
-  0% {
-    width: 0%;
-    box-sizing: border-box;
-  }
-  100% {
-    opacity: 1;
-  }
+.progressbar-animation {
+  animation: bar 1.5s ease-in;
 }
+
 .html {
   width: 95%;
-  animation: progressing 0.4s linear;
 }
 
 .css {
@@ -363,6 +365,18 @@ nav ul li .nav-links:hover {
 
 .jquery {
   width: 65%;
+}
+
+.nodejs {
+  width: 60%;
+}
+
+.expressjs {
+  width: 58%;
+}
+
+.mongodb {
+  width: 55%;
 }
 
 .python {
@@ -639,6 +653,7 @@ nav ul li .nav-links:hover {
 
 .portfolio-details .portfolio-details-slider img {
   width: 100%;
+  object-fit: cover;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination {
@@ -1113,6 +1128,9 @@ footer a {
   }
   .baractive .bar-3 {
     display: none;
+  }
+  .portfolio #portfolio-flters li {
+    height: auto;
   }
 }
 /* body {

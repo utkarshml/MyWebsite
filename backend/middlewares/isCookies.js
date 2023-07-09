@@ -16,6 +16,6 @@ else{
 }
 }
 catch(e){
-    next(new ErrorHandler("Login or Signup" , 404))
+    next(new ErrorHandler(e , 404))
 }
 }

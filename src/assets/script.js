@@ -90,19 +90,25 @@ else if(position < 70){
 }
 });
 
+const inHandler = () =>{
+  $(".progress-bar").addClass("progressbar-animation")
+    let ele = $("#skill")
+    if(window.pageYOffset > ele[0].offsetTop){
+    for(let i = 0 ; i < bardata.length ; i++){
+    anime({
+    targets : tool[i],
+    innerHTML: [0,bardata[i]],
+    easing: 'linear',
+    round: 1, })}
+    }
+}
+const outHandler = () =>{
+  $(".progress-bar").removeClass("progressbar-animation");
+  console.log("ok")
+}
+document.addEventListener('aos:in:progressBar', inHandler);
+document.addEventListener('aos:out:progressBar', outHandler);
 
-
-$(window).scroll(function(){
-  let ele = $("#skill")
-  if(window.pageYOffset > ele[0].offsetTop){
-  for(let i = 0 ; i < bardata.length ; i++){
-  anime({
-  targets : tool[i],
-  innerHTML: [0,bardata[i]],
-  easing: 'linear',
-  round: 1, })}
-  }
-})
  let  $grid = $('.portfolio-container').isotope({
   // options
   itemSelector: '.portfolio-item',

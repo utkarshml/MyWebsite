@@ -17,7 +17,7 @@ body{
   color: white;
   label{
     color: white!important;
-   }
+  }
 }
 
 nav{
@@ -53,9 +53,12 @@ nav{
 .theme-icon i {
   color: white;
   font-size: 1.5rem;
-  label{
-    color: white!important;
+  form{
+     label{
+    color:$font-color-light;
   }
+  }
+ 
 }
 .user{
   height: 400px;
@@ -87,7 +90,7 @@ h1{
      padding: 1rem;
     
     label{
-        color:$font-color-light!important;
+        color:$font-color-light;
       }
       input,textarea{
         background:hsla(250, 25%, 34%, 0.16)!important;

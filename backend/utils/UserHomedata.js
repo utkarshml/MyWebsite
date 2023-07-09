@@ -1,9 +1,11 @@
-
+import { databseModel } from "../model/user.js";
 
 const serSetHome =(response) =>{
- const { name }  = response
+   console.log(response)
+ const { name , EmailVerify }  = response
     return {
-       "name": name
+       "name": name,
+       "EmailVerify":EmailVerify
     }
 }
 export default serSetHome;

@@ -52,6 +52,15 @@
   <link href="./style.css" rel="stylesheet" type="text/css" />
 </head>
  <body>
+  <% if(locals.EmailVerify) { %>
+  <div class="verifyAlert">
+    <h2>Please Verify Your Email 
+      <form method="post" action="/verify">
+        <button class="btn btn-primary" style="border: none; color:white;" >Verify</button>
+      </form>
+    </h2>
+  </div>
+  <% } %>
   <div class="theme-icon">
     <i class="uil uil-moon"></i>
   </div>
@@ -437,7 +446,7 @@
   <!-- ------------------------Porfolio-section-------------------------------- -->
  <!-- ======= Portfolio Section ======= -->
  <section id="portfolio" class="portfolio section-bg" >
-  <div class="container">
+  <div class="container" style="height: auto;">
     <h1 class="text-center d-lg-flex d-black  style-heading text-lg-start price-heading my-5">Portfolio <span
       class=" my-auto mx-3 d-none d-lg-block  mt-5 side-divider"></span></h1>
 
@@ -643,9 +652,6 @@
   AOS.init({
     offset: 200,
   });
-  const handleCustomEvent = () =>{
-    $(".progress-bar").addClass("progressbar-animation")
-  }
-  document.addEventListener('aos:in:progressBar', handleCustomEvent);
+  
 </script>
 </html>
