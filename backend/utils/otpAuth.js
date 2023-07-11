@@ -15,19 +15,19 @@ export const OtpSender = (req , res) =>{
 
 
     const transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
-        port: 587,
+        host:process.env.SMTP_HOST,
+        port: process.env.SMTP_PORT,
         auth: {
           // TODO: replace `user` and `pass` values from <https://forwardemail.net>
-          user: 'utkarshjais8957@gmail.com',
-          pass: 'fbcnxoxpiwaioyns'
+          user: process.env.SMTP_EMAIL,
+          pass: process.env.SMTM_PASSWORD
         }
       });
    // async..await is not allowed in global scope, must use a wrapper
 async function main() {
     // send mail with defined transport object
     const info = await transporter.sendMail({
-      from: "utkarshjais8957@gmail.com", // sender address
+      from: process.env.SMTP_EMAIL, // sender address
       to: req.email, // list of receivers
       subject: "Otp Verification", // Subject line
       text: `Hello dear ${req.name}`, // plain text body

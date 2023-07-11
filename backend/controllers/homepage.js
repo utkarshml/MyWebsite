@@ -44,7 +44,8 @@ export const verifyPage = async (req, res) => {
    })
 };
 export const verifyEmail = async (req , res)=>{
-  const {id} = req.params
+  try
+{  const {id} = req.params
   const {digit1 , digit2 ,digit3 ,digit4}= req.body
   const otp = `${digit1}${digit2}${digit3}${digit4}`
   const decodedOtp = jwt.verify(id , process.env.TOKEN_SECRET || "kdjfdfhjdhfkjdhjkdbh")
@@ -63,6 +64,9 @@ export const verifyEmail = async (req , res)=>{
       params:id,
       alert:"! Incorrect OTP"
       })
+}}
+catch(err){
+  next(new ErrorHandler(err,400))
 }
 }
 // ---------------------------Post-Routes---------------
