@@ -5,7 +5,6 @@ var otpSchema = new mongoose.Schema({
     id:{
         type:String,
         required:true,
-        unique:true,
     },
     otp:{
         type:String,

@@ -1,3 +1,4 @@
+$(document).ready(function(){
 const navlinks = document.querySelectorAll(".nav-links");
 const burger = document.querySelector(".togglebtn");
 const nav = document.querySelector("nav");
@@ -192,3 +193,16 @@ document.addEventListener("DOMContentLoaded", function () {
   // On DOM Load initiate the effect
   if (textArray.length) setTimeout(type, newTextDelay + 20);
 });
+
+fetch("/price").then(res =>{
+  res.json().then(data =>{
+    $(".basic").text(`${data.basic}`)
+    $(".standard").text(`${data.standard}`)
+    $(".premium").text(`${data.premium}`)
+})}).catch(error =>{
+  $(".basic").text(`5`)
+  $(".standard").text(`10`)
+  $(".premium").text(`20`)
+})
+
+})

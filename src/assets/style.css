@@ -53,8 +53,9 @@ html {
     width: 3em;
     height: 2em;
     background-color: var(--primary-color);
-    top: 6em;
+    top: 18em;
     right: 0em;
+    z-index: 99;
     border-radius: 8px 0 0 8px;
     box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.3);
     display: flex;
@@ -81,7 +82,7 @@ html {
       }
   
       .navbar {
-    position: fixed!important;
+    position: sticky!important;
     background-color: var(--background-color);
       }
      header .logo {
@@ -386,24 +387,41 @@ html {
         flex-direction: 
         column;
         align-items: center;
+        padding: 0 2rem!important;
         justify-content: center;
         border-radius: 18px;
         font-size: 22px;
         font-weight: bold;
         color: #fff;
+        box-shadow: 0 0 34px 2px rgba(0, 0, 0, 0.3);
       }
   
   .swiper-slide:nth-child(1n) {
         background-color: var(--primary-color);
         color: black;
+        font-size: 6.5rem;
       }
   .swiper-slide:nth-child(1n) .price-tag{
     color: white;
-    font-size:7.5rem;
+    font-size:6.5rem;
   }
-  .swiper-slide:nth-child(1n) button{
+  .swiper-slide:nth-child(1n) a{
     background-color: white;
     color: var(--primary-color);
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  .swiper-slide:nth-child(2n) a{
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  .swiper-slide:nth-child(3n) a{
+    background-color: white;
+    color: var(--primary-color);
+    border-radius: 8px;
+    font-weight: 600;
   }
   .swiper-slide:nth-child(2n) .price-tag{
     color: var(--primary-color)!important;
@@ -424,7 +442,10 @@ html {
       .swiper-slide:nth-child(3n) {
         background-color: var(--primary-color);
       }
-  
+      .swiper-slide:nth-child(2n) button{
+        background-color: white;
+        color: var(--primary-color)!important;
+      }
   
   .side-divider{
     width: 40%;
@@ -1116,3 +1137,27 @@ html {
           background-color: #0056b3;
         }
          */
+
+         .verifyAlert{
+          display: flex;
+          padding: 1rem;
+          justify-content: space-around;
+      
+          background-color: #f82020d5;
+          width: 100%;
+          height: 3.5rem;
+          align-items: center;
+
+         }
+
+         .verifyAlert span{
+          font-size: 1rem;
+          font-weight: 600;
+          text-transform: capitalize;
+          color: white;
+
+         }
+         .verifyAlert form button {
+          background-color:var(--primary-color);
+          text-transform: capitalize;
+         }

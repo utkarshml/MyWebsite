@@ -48,17 +48,19 @@
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <!-- ----------------------------------------swiper-js----------------------------- -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-
+  <!-- ---------------------------------tostify--------------------------- -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <link href="./style.css" rel="stylesheet" type="text/css" />
 </head>
+
  <body>
-  <% if(locals.EmailVerify) { %>
+  <% if(locals.EmailVerify === false || locals.EmailVerify === null) { %>
   <div class="verifyAlert">
-    <h2>Please Verify Your Email 
-      <form method="post" action="/verify">
-        <button class="btn btn-primary" style="border: none; color:white;" >Verify</button>
-      </form>
-    </h2>
+    <span>Please Verify Your Email 
+    </span>
+    <form method="get" action="/verify">
+      <button class="btn btn-primary" style="border: none; color:white;" >Verify</button>
+    </form>
   </div>
   <% } %>
   <div class="theme-icon">
@@ -385,18 +387,18 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <h4 style="transform: translate(-63px, 40px);">$</h4>
-            <h4><span class="price-tag">5</span>/hr</h4>
-            <a href="#contact" class="btn btn-sign">Buy Now</a>
+            <h4><span class="price-tag basic">5</span>/hr</h4>
+            <a href="#contact" class="btn ">Buy Now</a>
           </div>
           <div class="swiper-slide">
             <h4 style="transform: translate(-63px, 40px);">$</h4>
-            <h4><span class="price-tag">10</span>/hr</h4>
-            <a href="#contact" class="btn btn-sign">Buy Now</a>
+            <h4><span class="price-tag standard">10</span>/hr</h4>
+            <a href="#contact" class="btn">Buy Now</a>
           </div>
           <div class="swiper-slide">
             <h4 style="transform: translate(-63px, 40px);">$</h4>
-            <h4><span class="price-tag">15</span>/hr</h4>
-            <a href="#contact" class="btn  btn-sign">Buy Now</a>
+            <h4><span class="price-tag premium">15</span>/hr</h4>
+            <a href="#contact" class="btn">Buy Now</a>
           </div>
         </div>
       </div>
@@ -653,5 +655,8 @@
     offset: 200,
   });
   
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script>
 </script>
 </html>

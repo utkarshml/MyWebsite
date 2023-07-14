@@ -5,6 +5,7 @@ body {
     min-height: 100vh;
     background-color: $background-color;
     margin: 0;
+    position: relative!important;
   }
   .dark-theme{
     background-color: #353543!important;
@@ -19,7 +20,7 @@ body {
     width: 3em;
     height: 2em;
     background-color: $primary-color;
-    top: 6em;
+    top: 18em;
     right: 0em;
     border-radius: 8px 0 0 8px;
     box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.3);
@@ -114,3 +115,21 @@ body {
   .submit-btn:hover {
     background-color: $secondry-color2;
   }
+.alerts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+  background-color: #10e910be;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+}
+.top{
+  top:15rem!important;
+}

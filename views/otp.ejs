@@ -11,12 +11,15 @@
 </head>
 <body>
   <%- include("./loginnav") %>
-  <div class="theme-icon">
+  <div class="theme-icon top">
     <i class="uil uil-moon"></i>
   </div>
+  <% if(locals.alert) { %>
+  <div class="alerts" style='background-color:<%= locals.color%>;'><i class="uil <%=locals.icon%>"></i><%= locals.alert %> </div>
   <div class="container">
+    <% } %>
     <h2>Enter OTP</h2>
-    <form class="otp-form" method="post" action="/verify/<%= locals.params %>">
+    <form class="otp-form" method="post" action="/verify">
       <div class="digit-input d-flex">
       <input type="text" maxlength="1" name="digit1" class="otp-input form-control" required>
       <input type="text" maxlength="1" name="digit2" class="otp-input  form-control" required>
@@ -28,6 +31,9 @@
   </div>
 </body>
 <script>
+setTimeout(e=>{
+  $(".alerts").fadeOut(2000)
+}, 3000)
 
 if(localStorage.getItem("theme") == "dark"){
   $("body").addClass("dark-theme");
@@ -52,6 +58,7 @@ $(".theme-icon").on("click" , function(){
     $(".theme-icon i").removeClass("uil-sun")
     localStorage.setItem("theme", "light")
   }
+
 })
 </script>
 </html>

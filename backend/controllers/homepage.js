@@ -7,9 +7,6 @@ import { render } from "ejs";
 import { OtpSender } from "../utils/otpAuth.js";
 import jwt from 'jsonwebtoken'
 import otpModel from "../model/otpgen.js";
-
-// ----------------------Get-Routes---------------
-
 // Home
 export const home = (req, res) => {
   if (req.user) {
@@ -21,37 +18,51 @@ export const home = (req, res) => {
 //Login
 export const userlogin = (req, res) => {
   if (req.user) {
-    res.render("index", userSetHome(req.user));
+   res.redirect("/")
   } else {
     res.render("login");
   }
 };
+
 //Registration
 export const userSignup = (req, res) => {
   if (req.user) {
-    res.render("index",
-     userSetHome(req.user),
-     );
+     
+    res.redirect("/")
+
   } else {
     res.render("signup");
   }
 };
-// Email verification
-export const verifyPage = async (req, res) => {
-  const par = await req.params
-   res.render("otp" ,{
-    params:par.id
-   })
-};
-export const verifyEmail = async (req , res)=>{
-  try
-{  const {id} = req.params
-  const {digit1 , digit2 ,digit3 ,digit4}= req.body
-  const otp = `${digit1}${digit2}${digit3}${digit4}`
-  const decodedOtp = jwt.verify(id , process.env.TOKEN_SECRET || "kdjfdfhjdhfkjdhjkdbh")
+export const verify = async (req ,res ) =>{
+  const { token} = req.cookies
+  const decodedOtp = jwt.verify(token, process.env.TOKEN_SECRET || "kdjfdfhjdhfkjdhjkdbh")
   const otpDetails = await otpModel.findOne({id:decodedOtp._id})
   const userDetails = await databseModel.findById(decodedOtp._id)
-  console.log(otp , decodedOtp , otpDetails, userDetails)
+  if(otpDetails){
+    res.render("otp" ,{
+      alert:"OTP is already send your email",
+      icon:"uil-exclamation-triangle",
+      color: "#f0e10fcc" 
+      })
+  }
+  OtpSender(userDetails, res)
+  res.render("otp" ,{
+    icon:"uil-envelope-upload",
+    alert:"OTP is send to your email",
+    color: "#10e910be" 
+    })
+}
+
+export const verifyEmail = async (req , res  , next)=>{
+  try
+{ 
+  const {token} = req.cookies
+  const {digit1 , digit2 ,digit3 ,digit4}= req.body
+  const otp = `${digit1}${digit2}${digit3}${digit4}`
+  const decodedOtp = jwt.verify(token, process.env.TOKEN_SECRET || "kdjfdfhjdhfkjdhjkdbh")
+  const otpDetails = await otpModel.findOne({id:decodedOtp._id})
+  const userDetails = await databseModel.findById(decodedOtp._id)
   if(otpDetails.otp  === otp){
    await databseModel.updateOne({ _id:userDetails._id } , 
     {  $set:{
@@ -61,8 +72,9 @@ export const verifyEmail = async (req , res)=>{
   }
   else{
     res.status(400).render("otp" ,{
-      params:id,
-      alert:"! Incorrect OTP"
+      icon:"uil-info-circle",
+      alert:"! Incorrect OTP",
+      color:"#ed0d0db0"
       })
 }}
 catch(err){
@@ -88,7 +100,7 @@ export const userAddDatabase = async (req, res , next) => {
         });
         OtpSender(user , res)
         const tokengen = await setCookies(res, 201, user);
-        res.redirect(`/verify/${tokengen}`)
+        res.redirect("/verify")
       } else {
         res.status(400).render("signup", {
           display: "block",
@@ -115,7 +127,7 @@ export const userFromDatabase = async (req, res , next) => {
         const passwordverify = await bcryt.compare(password, isUserLogin.password);
         if (passwordverify) {
           setCookies(res, 201, isUserLogin);
-          res.render("index", userSetHome(isUserLogin));
+          res.redirect("/")
         } else {
           res.status(400).render("login", {
             display: "block",
