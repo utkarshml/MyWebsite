@@ -148,6 +148,10 @@ $(".theme-icon").on("click" , function(){
   }
 })
 
+
+
+
+})
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
@@ -170,7 +174,10 @@ function type() {
     setTimeout(erase, newTextDelay);
   }
 }
-
+const alert = document.getElementsByClassName("alerts");
+setTimeout(function(){
+  alert[0].style.display = "none";
+},3000)
 function erase() {
   if (charIndex > 0) {
     if (!cursorSpan.classList.contains("typing"))
@@ -187,22 +194,10 @@ function erase() {
     if (textArrayIndex >= textArray.length) textArrayIndex = 0;
     setTimeout(type, typingDelay + 1000);
   }
+
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   // On DOM Load initiate the effect
   if (textArray.length) setTimeout(type, newTextDelay + 20);
 });
-
-fetch("/price").then(res =>{
-  res.json().then(data =>{
-    $(".basic").text(`${data.basic}`)
-    $(".standard").text(`${data.standard}`)
-    $(".premium").text(`${data.premium}`)
-})}).catch(error =>{
-  $(".basic").text(`5`)
-  $(".standard").text(`10`)
-  $(".premium").text(`20`)
-})
-
-})

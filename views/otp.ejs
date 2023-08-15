@@ -21,44 +21,66 @@
     <h2>Enter OTP</h2>
     <form class="otp-form" method="post" action="/verify">
       <div class="digit-input d-flex">
-      <input type="text" maxlength="1" name="digit1" class="otp-input form-control" required>
-      <input type="text" maxlength="1" name="digit2" class="otp-input  form-control" required>
-      <input type="text" maxlength="1" name="digit3" class="otp-input  form-control" required>
-      <input type="text" maxlength="1" name="digit4" class="otp-input  form-control" required></div>
+      <input type="text" maxlength="1" name="digit1" class="otp-input form-control"   oninput="handleInput(this, 1)" required>
+      <input type="text" maxlength="1" name="digit2" class="otp-input  form-control" oninput="handleInput(this, 1)"  required>
+      <input type="text" maxlength="1" name="digit3" class="otp-input  form-control"  oninput="handleInput(this, 1)" required>
+      <input type="text" maxlength="1" name="digit4" class="otp-input  form-control" oninput="handleInput(this, 1)"  required></div>
       <input type="submit" value="Submit" class="submit-btn">
     </form>
     <div class="alert"><%=locals.alert %></div>
+      <a class="py-5" disabled href="/resend">Resend Otp</a>
+    </form>
   </div>
 </body>
 <script>
-setTimeout(e=>{
-  $(".alerts").fadeOut(2000)
-}, 3000)
 
-if(localStorage.getItem("theme") == "dark"){
-  $("body").addClass("dark-theme");
-  $(".theme-icon i").addClass("uil-sun")
-  $(".theme-icon i").removeClass("uil-moon")
-}
-else if(localStorage.getItem("theme") == "light") {
-  $("body").removeClass("dark-theme");
-  $(".theme-icon i").addClass("uil-moon")
-  $(".theme-icon i").removeClass("uil-sun")
-}
-
-$(".theme-icon").on("click" , function(){
-  $("body").toggleClass("dark-theme");
-  if($("body").hasClass("dark-theme")){
+  setTimeout(e=>{
+    $(".alerts").fadeOut(2000)
+  }, 3000)
+  
+  if(localStorage.getItem("theme") == "dark"){
+    $("body").addClass("dark-theme");
     $(".theme-icon i").addClass("uil-sun")
     $(".theme-icon i").removeClass("uil-moon")
-    localStorage.setItem("theme", "dark")
   }
-  else{
+  else if(localStorage.getItem("theme") == "light") {
+    $("body").removeClass("dark-theme");
     $(".theme-icon i").addClass("uil-moon")
     $(".theme-icon i").removeClass("uil-sun")
-    localStorage.setItem("theme", "light")
+  }
+  
+  $(".theme-icon").on("click" , function(){
+    $("body").toggleClass("dark-theme");
+    if($("body").hasClass("dark-theme")){
+      $(".theme-icon i").addClass("uil-sun")
+      $(".theme-icon i").removeClass("uil-moon")
+      localStorage.setItem("theme", "dark")
+    }
+    else{
+      $(".theme-icon i").addClass("uil-moon")
+      $(".theme-icon i").removeClass("uil-sun")
+      localStorage.setItem("theme", "light")
+    }
+  })
+  
+  function handleInput(input, nextInputIndex) {
+  
+    let numericValue = parseInt(input.value, 10);
+  
+    if (isNaN(numericValue)) {
+      input.value = ''; // Clear the input if it's not a number
+      return;
+    }
+     
+  
+    const otpInputs = document.getElementsByClassName("otp-input")
+    const currentIndex = Array.from(otpInputs).indexOf(input);
+   console.log(currentIndex)
+    if (input.value.length === 1 && currentIndex < otpInputs.length - 1) {
+      otpInputs[currentIndex + 1].focus();
+    }
   }
 
-})
+
 </script>
 </html>

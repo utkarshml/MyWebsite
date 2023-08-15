@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.2",
-    "bcrypt": "^5.0.1",
+    "bcrypt": "^5.1.0",
     "body-parser": "^1.20.2",
     "browser-sync": "^2.27.7",
     "cookie-parser": "^1.4.6",
@@ -33,6 +33,7 @@
     "otp-generator": "^4.0.1",
     "postcss-cli": "^9.1.0",
     "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.10.1",
     "sass": "^1.49.8",
     "sass-loader": "^13.3.2",
     "socket.io": "^4.7.1",

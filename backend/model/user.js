@@ -13,6 +13,27 @@ import mongoose from "mongoose";
         select:false,
         required:true
     },
+    UserMessege : [
+       { name: {
+        type:String,
+       } ,
+       email: {
+        type:String
+       },
+        subject : {
+            type:String,
+        },
+        message : {
+            type:String,
+        },
+        lastUpdate: {
+            type : Date,
+            default: Date.now()
+        }
+    }
+    ]
+    ,
+
     createdAt:{
         type:Date,
         default:Date.now()

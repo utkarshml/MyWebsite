@@ -62,7 +62,10 @@
       <button class="btn btn-primary" style="border: none; color:white;" >Verify</button>
     </form>
   </div>
-  <% } %>
+  <% }%>
+  <% if(locals.alert) { %>
+    <div class="alerts"><i></i><%= locals.alert %></div>
+    <% }%>
   <div class="theme-icon">
     <i class="uil uil-moon"></i>
   </div>
@@ -379,7 +382,7 @@
   </div>
   <!-- --------------------------Feature-card-models-end------------------------------------ -->
   <!-- -----------------Pricing-card-start-------------------------- -->
-  <section id="price" class="container"  style="margin-top:5rem;">
+  <section hidden id="price" class="container"  style="margin-top:5rem;">
     <h1 class="text-center d-lg-flex d-black  style-heading text-lg-start price-heading my-5">Our Price <span
         class=" my-auto mx-3 d-none d-lg-block  mt-5 side-divider"></span></h1>
     <div class="row " data-aos="fade-up" data-aos-anchor-placement="top-bottom">
@@ -559,7 +562,7 @@
       </div>
 
       <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+        <form action="/message" method="post" role="form" class="php-email-form">
           <div class="row">
             <div class="form-group col-md-6">
               <label for="name">Your Name</label>

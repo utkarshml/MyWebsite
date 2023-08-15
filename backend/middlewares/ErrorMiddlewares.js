@@ -1,7 +1,8 @@
+
 export const ErrorMiddlewares = (err , req , res , next)=>{
-    err. message = err.message || "NOT fOUND"
-    err.statusCode = err.statusCode || 404
-    res.status(err.statusCode).json({
+    err.message = err.message || "Internal server Erorr"
+    err.statusCode = err.statusCode || 500
+   return res.status(err.statusCode).json({
         success:false,
         message:err.message
     })
