@@ -1,12 +1,4 @@
+
 {
-   "version": 2,
-   "name": "Portflio",
-   "builds": [
-      { "src": "./backend/server.js", 
-      "use": "@vercel/node" }
-   ],
-   "routes": [
-      { "src": "/(.*)", 
-      "dest": "./backend/server.js" }
-   ]
+  "rewrites": [{ "source": "/", "destination": "/Backend/sever.js" }]
 }
