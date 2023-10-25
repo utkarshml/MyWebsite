@@ -6,6 +6,7 @@
   "main": "./backend/server.js",
   "scripts": {
     "start": "node  ./backend/server.js",
+    "vercel-build" : "echo works"
     "dev": "nodemon server.js -e js,ejs",
     "build:sass": "sass  --no-source-map src/assets:public/css",
     "watch:sass": "sass  --no-source-map --watch src/assets:public/css"
